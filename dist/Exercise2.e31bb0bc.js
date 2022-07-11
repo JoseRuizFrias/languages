@@ -118,63 +118,35 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
-function _toArray(arr) { return _arrayWithHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableRest(); }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+var array1 = ['test1', 'test2', 'test3', 'test4', 'test5'];
+var array2 = ['test6', 'test7', 'test8', 'test9', 'test10'];
+var array = [['test1', 'test2', 'test3', 'test4', 'test5'], ['test6', 'test7', 'test8', 'test9', 'test10'], ['test11', 'test12', 'test13', 'test14', 'test15'], ['test16', 'test17', 'test18', 'test19', 'test20']]; // CONCAT
 
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-var array = ['test1', 'test2', 'test3', 'test4', 'test5']; // HEAD
-
-var head = function head(_ref) {
-  var _ref2 = _slicedToArray(_ref, 3),
-      a = _ref2[0],
-      b = _ref2[1],
-      c = _ref2[2];
-
-  return a;
+var concat = function concat(a, b) {
+  return [].concat(_toConsumableArray(a), _toConsumableArray(b));
 };
 
-console.log(head(array)); //TAIL
+console.log(concat(array1, array2)); // OPTIONAL
 
-var tail = function tail(_ref3) {
-  var _ref4 = _toArray(_ref3),
-      a = _ref4[0],
-      rest = _ref4.slice(1);
-
-  return rest;
-};
-
-console.log(tail(array)); // INIT
-
-var init = function init() {
-  return array.slice(0, array.length - 1);
-};
-
-console.log(init(array)); // LAST
-
-var last = function last() {
-  return array.findLast(function (element) {
-    return element;
+var concatMany = function concatMany(array) {
+  return array.reduce(function (a, b) {
+    return [].concat(_toConsumableArray(a), _toConsumableArray(b));
   });
 };
 
-var last2 = function last2() {
-  return array[array.length - 1];
-};
-
-console.log(last(array));
-console.log(last2(array));
+console.log(concatMany(array));
 },{}],"../../../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -203,7 +175,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63486" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54073" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -380,4 +352,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["../../../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/Exercise1.e31bb0bc.js.map
+//# sourceMappingURL=/Exercise2.e31bb0bc.js.map
