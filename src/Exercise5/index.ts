@@ -1,7 +1,8 @@
 // SLOT MACHINE
 
 class slotMachine {
-    public coinCount: number = 0;
+    
+    coinCount: number = 0;
 
     Play = () : void => {
 
