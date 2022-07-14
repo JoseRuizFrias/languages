@@ -140,8 +140,6 @@ function () {
         _this.coinCount++;
       }
     };
-
-    this.coinCount;
   }
 
   return slotMachine;

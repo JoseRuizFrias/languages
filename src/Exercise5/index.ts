@@ -3,10 +3,6 @@
 class slotMachine {
     public coinCount: number = 0;
 
-    constructor () {
-        this.coinCount;
-    }
-
     Play = () : void => {
 
         const wheel1: boolean = randomBoolean();
